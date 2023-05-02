@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <title>{{ dojo.name }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>{{ dojo.name }}</h1>
+        <h2>Add a new Ninja</h2>
+        <form action="{{ url_for('add_ninja', id=dojo.id) }}" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        <br><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        <br><br>
+        <label for="dojo_id">Dojo:</label>
+        <select id="dojo_id" name="dojo_id">
+            {% for dojo in dojos %}
+            <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+            {% endfor %}
+    <!-- {% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ dojo[1] }}</h1>
+<ul>
+    {% for ninja in ninjas %}
+    <li>{{ ninja[1] }} {{ ninja[2] }}</li>
+    {% endfor %}
+</ul>
+<form action="{{ url_for('add_ninja') }}" method="post">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name">
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name">
+    <label for="dojo_id">Dojo:</label>
+    <select name="dojo_id" id="dojo_id">
+    {% for dojo in dojos %}
+        <option value="{{ dojo[0] }}">{{ dojo[1] }}</option>
+    {% endfor %}
+    </select>
+    <button type="submit">Add Ninja</button>
+</form>
+{% endblock %} -->
+
+</body>
+</html>

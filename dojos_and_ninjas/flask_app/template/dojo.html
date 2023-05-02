@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Dojos{% endblock %}
+
+{% block content %}
+    <h1>Dojos</h1>
+    <ul>
+        {% for dojo in dojos %}
+            <li><a href="/dojos/{{ dojo.id }}">{{ dojo.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dojos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Dojos</h1>
+    <h2>Add a new Dojo</h2>
+    <form action="{{ url_for('add_dojo') }}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+    <br><br>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required>
+    <br><br>
+    <button type="submit">Add Dojo</button>
+    </form>
+    <br>
+    <h2>All Dojos</h2>
+    {% if dojos %}
+    <ul>
+    {% for dojo in dojos %}
+    <li><a href="{{ url_for('dojo_show', id=dojo.id) }}">{{ dojo.name }} - {{ dojo.city }}, {{ dojo.state }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Dojos yet</p>
+    {% endif %}
+</body>
+</html>
+

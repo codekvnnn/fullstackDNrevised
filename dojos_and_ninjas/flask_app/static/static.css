@@ -1,0 +1,55 @@
+/* Set the background color of the page */
+body {
+    background-color: #f2f2f2;
+}
+
+  /* Set the font family and color for all text */
+body, h1, h2, h3, p {
+    font-family: Arial, sans-serif;
+    color: #333333;
+}
+
+  /* Center the content on the page */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+  /* Style the links */
+a {
+    color: #008CBA;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
+  /* Style the form */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #008CBA;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #005580;
+}
